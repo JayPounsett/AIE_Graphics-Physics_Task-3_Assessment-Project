@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Animator animator;
+    Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         float fwd = Input.GetAxis("Vertical");
-        animator.SetFloat("Foward", Mathf.Abs(fwd));
-        animator.SetFloat("Sense", Mathf.Sign(fwd));
-        animator.SetFloat("Turn", Input.GetAxis("Horizontal"));
+        anim.SetFloat("Forward", Mathf.Abs(fwd));
+        anim.SetFloat("Sense", Mathf.Sign(fwd));
+        anim.SetFloat("Turn", Input.GetAxis("Horizontal"));
     }
 }
